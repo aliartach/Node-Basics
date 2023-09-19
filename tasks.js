@@ -69,6 +69,12 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
+
+
+/**
+ * Asking for help
+ * 
+ */
 function help(){
   console.log('hello : to start the app, quit :to quit the app')
 }
