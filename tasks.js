@@ -34,11 +34,12 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+  const arg = text.slice(6).trim()
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(text.startsWith('hello ')){
+    hello(arg);
   }
   else if(text === 'help\n'){
     help();
@@ -66,17 +67,20 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+function hello(arg){
+  console.log(`hello ${arg}!`)
 }
 
+// function onDataReceived(){
+//     console.log ("hello"+c[5].trim()+'!')
+// }
 
 /**
  * Asking for help
  * 
  */
 function help(){
-  console.log('hello : to start the app, quit :to quit the app')
+  console.log('type hello : to start the app; quit : to quit the app')
 }
 
 /**
