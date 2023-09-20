@@ -78,7 +78,7 @@ function hello(text){
  * 
  */
 function help(){
-  console.log('hello : to start the app, quit :to quit the app')
+  console.log('hello : to start the app, \n quit or exit :to quit the app \n hello + your text')
 }
 
 /**
