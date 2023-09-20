@@ -48,7 +48,7 @@ function onDataReceived(text) {
   else{
     unknownCommand(text);
   }
-}
+} 
 
 
 /**
