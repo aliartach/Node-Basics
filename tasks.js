@@ -42,6 +42,9 @@ function onDataReceived(text) {
   else if(argument === 'hello'){
     hello(text.replace("\n", ""));
   }
+  else if(text.trim() === 'list'){
+    listTasks()
+  }
   else if(text === 'help\n'){
     help();
   }
@@ -60,6 +63,14 @@ function onDataReceived(text) {
  */
 function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
+}
+
+const tasks = [ "task1" , "task2", "task3"];
+
+function listTasks(){
+tasks.forEach((tasks, index) => {
+  console.log(`${index + 1}. ${tasks}`);
+})
 }
 
 
