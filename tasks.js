@@ -85,6 +85,9 @@ function remove(index){
   if (!index){
     tasks.pop()
   }
+  else if (index>tasks.length){
+    console.log("task number doesn't exist")
+  }
   else {
     tasks.splice(+index-1,1)
   }
