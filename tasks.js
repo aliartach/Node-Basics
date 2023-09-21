@@ -36,6 +36,8 @@ function startApp(name){
 function onDataReceived(text) {
   const argument = text.split(" ")[0].trim()
   console.log(argument)
+  const task = text.substring(3).trim()
+  console.log(task)
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
@@ -47,6 +49,9 @@ function onDataReceived(text) {
   }
   else if(text === 'help\n'){
     help();
+  }
+  else if(argument == 'add'){
+    add(task)
   }
   else{
     unknownCommand(text);
@@ -65,13 +70,18 @@ function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
 
-const tasks = [ "task1" , "task2", "task3"];
+const tasks = [];
 
-function listTasks(){
-tasks.forEach((tasks, index) => {
-  console.log(`${index + 1}. ${tasks}`);
-})
+function listTasks() {
+  for (let i=0; i<tasks.length; i++){
+    console.log(i+1 + "[ ] " + tasks[i]);
+  }
 }
+
+
+function add(task){
+  tasks.push(task)
+} 
 
 
 /**
