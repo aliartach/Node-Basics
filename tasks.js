@@ -110,7 +110,7 @@ function hello(text){
  * 
  */
 function help(){
-  console.log('hello : to start the app, \n quit or exit :to quit the app \n hello + your text')
+  console.log('hello : to start the app, \n quit or exit :to quit the app \n hello + your text \n add ( ) to add a new task to the list \n remove : to remove the last task \n remove(number of task) to remove the number of the task')
 }
 
 /**
