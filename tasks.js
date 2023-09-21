@@ -34,10 +34,11 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
-  const argument = text.split(" ")[0].trim()
-  console.log(argument)
+  const argument = text.split(" ")[0].trim();
+  const answer = text.split(" ")[1]
+  // console.log(argument)
   const task = text.substring(3).trim()
-  console.log(task)
+  // console.log(task)
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
@@ -52,6 +53,9 @@ function onDataReceived(text) {
   }
   else if(argument == 'add'){
     add(task)
+  }
+  else if(argument == 'remove'){
+    remove(answer);
   }
   else{
     unknownCommand(text);
@@ -70,14 +74,21 @@ function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
 
-const tasks = [];
+const tasks = ["Do sport","Buy coffee","Meet a friend"];
 
 function listTasks() {
   for (let i=0; i<tasks.length; i++){
     console.log(i+1 + "[ ] " + tasks[i]);
   }
 }
-
+function remove(index){
+  if (!index){
+    tasks.pop()
+  }
+  else {
+    tasks.splice(+index-1,1)
+  }
+}
 
 function add(task){
   tasks.push(task)
